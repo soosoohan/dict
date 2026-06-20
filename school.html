@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>
+  if (window.top !== window.self) {
+    window.top.location = "https://soosooland.com";
+  }
+  console.log("© 2025-2026 Soosooland by 한수수. All rights reserved.");
+  console.log("https://soosooland.com");
+  console.log("🎮 Moeum School | Born: 2026-01-18");
+</script>
+ <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZHC1G9FN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4YZHC1G9FN');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>모음스쿨 - 초등학생 학습 퀴즈 | Soosooland</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="초등학교 교육과정에서 배우는 내용을 퀴즈로 만들었습니다. 에빙하우스 망각곡선을 적용한 과학적 반복 학습으로 기억력 향상">
+    <meta name="keywords" content="기억력 향상, 반복 학습, 초등교육과정, 초등교육, 모음스쿨, 초등퀴즈, 에빙하우스">
+    <meta name="author" content="Soosooland">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="모음스쿨 - 초등학생 학습 퀴즈">
+    <meta property="og:description" content="초등학교 교육과정 기반 학습 퀴즈. 에빙하우스 망각곡선을 적용한 과학적 반복 학습으로 기억력 향상">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soosooland.com/school/school.html">
+    <link rel="canonical" href="https://soosooland.com/school/school.html">
+    <link rel="stylesheet" href="https://soosooland.com/css/protection.css">
+    <script src="https://soosooland.com/js/protection.js"></script>
+<style>
+        :root {
+            --bg-color: #145454;
+            --white-color: #F4F6F5;
+            --black-color: #1B2B2B;
+            --primary-color: #6F8FA3;
+            --sub-color: #2F4B5C;
+            --accent-color: #2F4B5C;
+        }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+body {
+font-family: 'Malgun Gothic', sans-serif;
+background: var(--bg-color);
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 750px;
+margin: 0 auto;
+}
+
+.header {
+text-align: center;
+margin-bottom: 30px;
+}
+.title {
+font-size: 1.8em;
+font-weight: bold;
+color: var(--white-color);
+margin-bottom: 10px;
+}  
+.subtitle {
+color: var(--primary-color);
+font-size: 1.4em;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.game-desc {
+color: var(--white-color);
+font-size: 1.1em;
+}
+
+.game-board {
+background: var(--white-color);
+border-radius: 12px;
+padding: 30px;
+margin-bottom: 20px;
+}
+
+.round-section {
+background: var(--primary-color);
+border-radius: 8px;
+padding: 10px;
+margin-bottom: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: var(--black-color);
+}
+
+.round-display {
+font-size: 1.3em;
+color: var(--black-color);
+font-weight: bold;
+}
+
+.score-display {
+font-size: 1.3em;
+color: var(--black-color);
+font-weight: bold;
+}
+
+.next-round-btn {
+background: var(--sub-color);
+color: var(--white-color);
+padding: 12px 24px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 1.1em;
+margin-top: 15px;
+transition: all 0.3s ease;
+}
+
+.next-round-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.final-message {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.final-alert {
+background: var(--white-color);
+border: 2px solid var(--primary-color);
+color: var(--black-color);
+padding: 20px;
+border-radius: 8px;
+font-size: 1.4em;
+font-weight: bold;
+}
+
+.retry-wrong-btn {
+background: var(--accent-color);
+color: var(--white-color);
+padding: 12px 24px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 1.1em;
+transition: all 0.3s ease;
+}
+
+.sentence-display {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.sentence-area {
+font-size: 3em;
+background: var(--white-color);
+padding: 15px;
+border-radius: 8px;
+min-height: 120px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+line-height: 1.2;
+word-break: keep-all;
+overflow-wrap: break-word;
+}
+
+.word-group {
+display: inline-flex;
+flex-wrap: nowrap;
+white-space: nowrap;
+align-items: center;
+margin-right: 0.3em;
+color: var(--black-color);
+}
+
+.word-group:last-child {
+margin-right: 0;
+}
+
+.hangul-char {
+display: inline-block;
+min-width: 1em;
+height: 1.2em;
+text-align: center;
+vertical-align: baseline;
+font-family: 'Malgun Gothic', sans-serif;
+}
+
+.incomplete-char {
+background: var(--white-color);
+color: var(--black-color);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-width: 1em;
+height: 1.2em;
+}
+
+.complete-char {
+color: var(--black-color);
+}
+
+.space {
+width: 0.5em;
+}
+
+.win-message {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.win-alert {
+background: var(--white-color);
+border: 1px solid var(--primary-color);
+color: var(--black-color);
+padding: 15px;
+border-radius: 8px;
+font-size: 1.2em;
+}
+
+.lose-message {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.lose-alert {
+background: var(--primary-color);
+border: 1px solid var(--primary-color);
+color: var(--black-color);
+padding: 15px;
+border-radius: 8px;
+font-size: 1.2em;
+}
+
+.wrong-attempts {
+background: var(--primary-color);
+color: var(--black-color);
+padding: 8px 12px;
+border-radius: 6px;
+font-weight: bold;
+margin-left: 10px;
+}
+
+.hint-section {
+  background: var(--sub-color);
+  color: var(--white-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.hint-title {
+  font-size: 1.2em;
+  color: var(--white-color);
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline;
+}
+
+.hint-text {
+  font-size: 1.3em;
+  color: var(--white-color);
+  font-weight: bold;
+  display: inline;
+}
+
+.hint-text .emoji {
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.consonant-section {
+background: var(--white-color);
+border-radius: 12px;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+padding: 30px;
+margin-bottom: 20px;
+max-width: 750px;
+margin: 0 auto 20px auto;  
+}
+
+.consonant-title {
+font-size: 1.2em;
+font-weight: 600;
+margin-bottom: 20px;
+text-align: center;
+color: var(--black-color);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.title-text-desktop {
+display: inline;
+}
+
+.title-text-mobile {
+display: none;
+}
+
+.consonant-input {
+width: 50px;
+height: 40px;
+font-size: clamp(16px, 1.5em, 24px);
+text-align: center;
+border: 2px solid var(--primary-color);
+border-radius: 8px;
+padding: 5px;
+font-family: 'Malgun Gothic', sans-serif;
+background: white;
+color: var(--black-color);
+}
+
+.consonant-input:focus {
+outline: none;
+border-color: var(--sub-color);
+box-shadow: 0 0 5px var(--sub-color);
+}
+
+.consonant-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 10px;
+}
+
+.consonant-btn {
+width: 60px;
+height: 60px;
+font-size: 1.4em;
+font-weight: bold;
+border-radius: 8px;
+border: 2px solid;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.consonant-btn.available {
+background: var(--primary-color);
+color:var(--black-color);
+}
+
+.consonant-btn.available:hover {
+background: linear-gradient(135deg, #7AB2D3, #B9E5E8);
+color: white;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(74, 98, 138, 0.3);
+}
+
+.consonant-btn.correct {
+background:var(--white-color);
+color: var(--black-color);
+border-color: #4A628A;
+}
+
+.consonant-btn.wrong {
+background:var(--white-color);
+color: var(--black-color);
+border-color: var(--primary-color);
+cursor: not-allowed;
+}
+
+.game-info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--bg-color);
+padding: 10px;
+margin-bottom: 20px;
+max-width: 750px;
+margin: 0 auto 20px auto;
+}
+
+.stats {
+font-size: 1.3em;
+font-weight: bold;
+color: var(--primary-color);
+}
+
+.new-game-btn {
+background: var(--accent-color);
+color: var(--white-color);
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 1em;
+transition: all 0.3s ease;
+}
+
+.new-game-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 복습 모드 표시 배너 */
+.review-banner {
+background: #FF9800;
+color: white;
+padding: 10px;
+border-radius: 8px;
+text-align: center;
+font-weight: bold;
+font-size: 1.1em;
+margin-bottom: 15px;
+}
+footer {
+text-align: center;
+color: #c3dbdb;
+font-size: 0.8rem;
+margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+.title {
+font-size: 1.8em;
+}
+.sentence-area {
+font-size: 1.8em;
+padding: 20px;
+min-height: 80px;
+}
+
+.consonant-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.consonant-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 1.0em;
+}
+
+.new-game-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1em;
+}
+
+.game-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.game-info > div {
+    width: 100%;
+}
+
+.container {
+    padding: 10px;
+}
+
+.consonant-title {
+    font-size: 1em;
+    flex-direction: column;
+    gap: 5px;
+}
+.title-text-desktop {
+    display: none;
+}
+
+.title-text-mobile {
+    display: inline;
+}
+
+.consonant-input {
+    width: 60px;
+    height: 45px;
+    display: none;
+}    
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+ <div class="header">
+    <h1 class="title">모음 스쿨</h1>
+    <p class="subtitle" id="categoryTitle">게임을 시작하세요</p>
+</div>
+
+  <div class="game-board">
+    <!-- 복습 모드일 때 표시되는 배너 -->
+    <div class="review-banner" id="reviewBanner" style="display: none;">
+      📝 복습 모드 - 1차 공부에서 틀린 문제를 복습합니다
+    </div>
+    
+    <div class="round-section">
+      <div class="round-display" id="roundDisplay">문제 1/10</div>
+      <div class="score-display" id="scoreDisplay">정답: 0/10</div>
+    </div>
+
+<div class="hint-section">
+  <div class="hint-title">💡 </div>
+  <div class="hint-text" id="hintText">게임을 시작하세요!</div>
+</div>
+<div class="sentence-display">
+  <div class="sentence-area" id="sentenceArea">
+    게임을 시작하세요!
+  </div>
+</div>
+<div id="winMessage" class="win-message" style="display: none;">
+<div class="win-alert">
+    🎉 정답입니다! 🎉
+</div>
+<button class="next-round-btn" onclick="nextRound()">다음 문제 →</button>
+
+</div>
+  </div>
+  <div id="loseMessage" class="lose-message" style="display: none;">
+    <div class="lose-alert">
+        😔 게임 종료! 정답을 확인하세요.
+    </div>
+  </div>
+<div id="finalMessage" class="final-message" style="display: none;">
+    <div class="final-alert" id="finalAlert">
+        🎊 모든 문제를 풀었어요! 🎊<br><br>
+        총 <span id="totalQuestions"></span>문제<br>
+        ✅ 맞힌: <span id="correctCount"></span>개<br>
+        ❌ 틀린: <span id="wrongCount"></span>개<br>
+        정답률: <span id="accuracy"></span>%
+
+    <button class="retry-wrong-btn" id="retryWrongBtn" style="display: none;" onclick="retryWrongAnswers()">
+        틀린 문제 <span id="wrongCountForRetry"></span>개 다시 풀기
+    </button>
+    </div>
+
+</div>
+</div>
+  <div class="consonant-section">
+ <h3 class="consonant-title">
+    <span class="title-text-desktop">자음을 클릭하거나 입력하세요 →</span>
+    <span class="title-text-mobile">자음을 클릭하세요</span>
+   <input type="text" 
+       class="consonant-input" 
+       id="consonantInput" 
+       maxlength="1" 
+       autocomplete="off"
+       autocorrect="off"
+       autocapitalize="off"
+       spellcheck="false"
+       name="consonant-input-random">
+</h3>
+    <div class="consonant-grid" id="consonantGrid">
+    </div>
+  </div>
+<div class="game-info">
+    <div class="stats" id="gameStats">
+        맞춘 자음: 0개 | 틀린 자음: 0개
+    </div>
+    <div style="display: flex; gap: 10px;">
+          <button class="new-game-btn" onclick="location.href='https://soosooland.com/school/index.html'">다른 공부하기</button>
+    </div>
+</div>
+<footer>
+  <p>© 2025 Han Soosoo. All rights reserved.</p>
+</footer>
+
+<script>
+ 
+const dailyThemes = {
+1: { bg: '#145454', white: '#F4F6F5', black: '#1B2B2B', primary: '#91b2c7', sub: '#2F4B5C', accent: '#E8956F', name: '월요일' },
+2: { bg: '#145454', white: '#F4F6F5', black: '#1B2B2B', primary: '#7FA89A', sub: '#355F56', accent: '#c18ff2', name: '화요일' },
+3: { bg: '#145454', white: '#F7F5F0', black: '#2A2320', primary: '#B8C46F', sub: '#6B7A3F', accent: '#f7b2e3', name: '수요일' },
+4: { bg: '#145454', white: '#F7F5F0', black: '#2A2320', primary: '#D08A5A', sub: '#A85432', accent: '#5AB8D0', name: '목요일' },
+5: { bg: '#145454', white: '#F8F6FA', black: '#241F2B', primary: '#fcdd95', sub: '#C8A24A', accent: '#a5cbfa', name: '금요일' },
+6: { bg: '#145454', white: '#F8F6FA', black: '#241F2B', primary: '#f5c9c4', sub: '#9B4A4A', accent: '#6FD0B8', name: '토요일' },
+0: { bg: '#145454', white: '#F8F6FA', black: '#241F2B', primary: '#9A8FBF', sub: '#4E3F73', accent: '#C5D08F', name: '일요일' }
+};
+
+function applyDailyTheme() {
+    const today = new Date().getDay();
+    const theme = dailyThemes[today];
+    const root = document.documentElement;
+    root.style.setProperty('--bg-color', theme.bg);
+    root.style.setProperty('--white-color', theme.white);
+    root.style.setProperty('--black-color', theme.black);
+    root.style.setProperty('--primary-color', theme.primary);
+    root.style.setProperty('--sub-color', theme.sub);
+    root.style.setProperty('--accent-color', theme.accent);
+}
+
+applyDailyTheme();
+
+function wrapEmojis(text) {
+  const emojiRegex = /(\p{Emoji_Presentation}|\p{Extended_Pictographic})/gu;
+  return text.replace(emojiRegex, '<span class="emoji">$1</span>');
+}
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const wordpoolUrl = urlParams.get('wordpool');
+const categoryTitle = urlParams.get('title') || '모음 스쿨';
+
+// wordpool URL에서 이름 추출 (예: "0-1-1-1")
+function getWordpoolName() {
+    if (!wordpoolUrl) return '';
+    return wordpoolUrl.split('/').pop().replace('.json', '');
+}
+
+let sentences = [];
+let originalSentences = [];
+const consonants = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+
+let totalQuestions = 0;
+let wrongCount = 0; 
+let wrongAnswers = [];           // 현재 라운드에서 틀린 문제
+let firstAttemptWrongAnswers = []; // 1차 공부에서 틀린 문제 (복습용)
+let guessedConsonants = new Set();
+let wrongConsonants = new Set();
+let gameWon = false;
+let gameLost = false; 
+let charStates = [];
+let currentHint = '';
+let currentSentence = '';
+let shuffledSentences = [];
+let sentenceIndex = 0;
+
+// ===== 핵심 상태 변수 =====
+let gameMode = 'first';  // 'first' = 1차공부, 'first-retry' = 1차 틀린문제 재시도, 'review' = 복습, 'review-retry' = 복습 틀린문제 재시도, 'practice' = 연습
+let currentReviewStep = 0; // 0=1차, 1=2차, 2=3차, 3=4차
+
+async function loadWordpool() {
+    if (!wordpoolUrl) {
+        redirectToIndex();
+        return false;
+    }
+
+    try {
+        const response = await fetch(wordpoolUrl);
+
+        if (!response.ok) {
+            redirectToIndex();
+            return false;
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data) || data.length === 0) {
+            redirectToIndex();
+            return false;
+        }
+
+        sentences = data;
+        originalSentences = [...data];
+
+        return true;
+
+    } catch (error) {
+        redirectToIndex();
+        return false;
+    }
+}
+
+// 공통 함수로 분리 (깔끔 👍)
+function redirectToIndex() {
+    window.location.href = 'https://soosooland.com/school/';
+}
+
+// ===== 진도/복습 데이터 관리 =====
+
+function getProgress(wpName) {
+    try {
+        const allProgress = JSON.parse(localStorage.getItem('moeumschool_progress') || '{}');
+        return allProgress[wpName || getWordpoolName()] || { attempts: [] };
+    } catch (error) {
+        return { attempts: [] };
+    }
+}
+
+function saveProgressData(wpName, progressData) {
+    try {
+        const allProgress = JSON.parse(localStorage.getItem('moeumschool_progress') || '{}');
+        allProgress[wpName || getWordpoolName()] = progressData;
+        localStorage.setItem('moeumschool_progress', JSON.stringify(allProgress));
+    } catch (error) {
+        console.error('진도 저장 실패:', error);
+    }
+}
+
+function getReviewData(wpName) {
+    try {
+        const allReviews = JSON.parse(localStorage.getItem('moeumschool_reviews') || '{}');
+        return allReviews[wpName || getWordpoolName()] || null;
+    } catch (error) {
+        return null;
+    }
+}
+
+function saveReviewData(wpName, reviewData) {
+    try {
+        const allReviews = JSON.parse(localStorage.getItem('moeumschool_reviews') || '{}');
+        allReviews[wpName || getWordpoolName()] = reviewData;
+        localStorage.setItem('moeumschool_reviews', JSON.stringify(allReviews));
+    } catch (error) {
+        console.error('복습 데이터 저장 실패:', error);
+    }
+}
+
+// ===== 🔧 테스트 모드 =====
+// true: 간격을 초 단위로 (3일→30초, 7일→60초, 14일→90초, 28일→120초)
+// false: 원래 일 단위
+const TEST_MODE = false;
+const TEST_INTERVALS_SEC = [30, 60, 90, 120]; // 초 단위
+
+function getTodayLocal() {
+    if (TEST_MODE) return Date.now();
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function addDays(dateStr, days) {
+    if (TEST_MODE) {
+        return dateStr + (days * 1000);
+    }
+    const d = new Date(dateStr + 'T00:00:00');  
+    d.setDate(d.getDate() + days);           
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function getIntervals() {
+    return TEST_MODE ? TEST_INTERVALS_SEC : [3, 7, 14, 28];
+}
+
+// ===== 게임 모드 결정 =====
+function determineGameMode() {
+    const wpName = getWordpoolName();
+    const progress = getProgress(wpName);
+    const reviewData = getReviewData(wpName);
+    const today = getTodayLocal();
+    
+    // 아직 시작 안 함
+    if (progress.attempts.length === 0) {
+        return { mode: 'first', step: 0 };
+    }
+    
+    // 🏆 트로피 (5회 = 첫판 만점 또는 5차 복습 완료)
+    if (progress.attempts.length >= 5) {
+        return { mode: 'trophy', step: 5 };
+    }
+    
+    // 복습 데이터 확인
+    if (!reviewData || !reviewData.wrongQuestions || reviewData.wrongQuestions.length === 0) {
+        return { mode: 'practice', step: progress.attempts.length };
+    }
+    
+    // 현재 복습 단계 확인
+    const completedReviews = reviewData.completedReviews || 0;
+    // completedReviews: 0=1차완료, 1=2차완료, 2=3차완료, 3=4차완료, 4=5차완료
+    
+    if (completedReviews >= 4) {
+        // 5차 복습까지 완료 → 이미 트로피여야 함
+        return { mode: 'trophy', step: 5 };
+    }
+    
+    // 다음 복습 날짜 확인
+    const nextReviewDate = reviewData.nextReviewDate;
+    if (!nextReviewDate) {
+        // nextReviewDate가 없으면 아직 1차 완료 직후
+        return { mode: 'waiting', step: completedReviews, nextDate: reviewData.nextReviewDate };
+    }
+    
+    if (today >= nextReviewDate) {
+        // 복습 가능!
+        return { mode: 'review', step: completedReviews + 1 };
+    } else {
+        // 아직 복습 시기 아님
+        let timeLeft;
+        if (TEST_MODE) {
+            const diffSec = Math.ceil((nextReviewDate - today) / 1000);
+            timeLeft = `${diffSec}초`;
+        } else {
+            const diffMs = new Date(nextReviewDate + 'T00:00:00Z') - new Date(today + 'T00:00:00Z');
+            timeLeft = `${Math.ceil(diffMs / (1000*60*60*24))}일`;
+        }
+        return { mode: 'waiting', step: completedReviews, nextDate: nextReviewDate, timeLeft: timeLeft };
+    }
+}
+
+// ===== 게임 시작 시 모드 확인 및 분기 =====
+function initGameMode() {
+    const modeInfo = determineGameMode();
+    const wpName = getWordpoolName();
+    const reviewData = getReviewData(wpName);
+    
+    console.log('게임 모드:', modeInfo);
+    
+    switch (modeInfo.mode) {
+        case 'first':
+            // 1차 공부 - 전체 문제
+            gameMode = 'first';
+            currentReviewStep = 0;
+            document.getElementById('reviewBanner').style.display = 'none';
+            sentences = [...originalSentences];
+            break;
+            
+        case 'review':
+            // 복습 모드 - 1차에서 틀린 문제만
+            gameMode = 'review';
+            currentReviewStep = modeInfo.step;
+            const stepNames = ['', '2차 복습', '3차 복습', '4차 복습', '5차 복습'];
+            const banner = document.getElementById('reviewBanner');
+            banner.style.display = 'block';
+            banner.textContent = `📝 ${stepNames[modeInfo.step] || '복습'} - 1차 공부에서 틀린 문제를 복습합니다`;
+            
+            // 1차에서 틀린 문제만 로드
+            sentences = reviewData.wrongQuestions.map(q => ({ text: q.text, hint: q.hint }));
+            break;
+            
+        case 'trophy':
+            // 🏆 트로피 보유 - 반납하고 처음부터 다시 풀 수 있음
+            const resetChoice = window.confirm('🏆 학습 완료! 트로피를 보유하고 있습니다.\n\n[확인] 트로피를 반납하고 처음부터 공부\n[취소] 트로피를 지키고 다른 공부하기');
+            if (resetChoice) {
+                const wpNameTrophy = getWordpoolName();
+                // progress 초기화
+                saveProgressData(wpNameTrophy, { attempts: [] });
+                // review 데이터 완전 삭제
+                try {
+                    const allReviews = JSON.parse(localStorage.getItem('moeumschool_reviews') || '{}');
+                    delete allReviews[wpNameTrophy];
+                    localStorage.setItem('moeumschool_reviews', JSON.stringify(allReviews));
+                } catch (e) { console.error(e); }
+                
+                gameMode = 'first';
+                currentReviewStep = 0;
+                document.getElementById('reviewBanner').style.display = 'none';
+                sentences = [...originalSentences];
+            } else {
+                location.href = 'https://soosooland.com/school/index.html';
+                return;
+            }
+            break;
+            
+        case 'practice':
+            // 연습 모드 (비정상 상태 등)
+            gameMode = 'practice';
+            document.getElementById('reviewBanner').style.display = 'none';
+            sentences = [...originalSentences];
+            break;
+            
+        case 'waiting':
+            // 아직 복습 시기가 아님
+            alert(`⏰ 아직 복습 시기가 아닙니다!\n\n다음 복습: ${modeInfo.timeLeft} 후 (${modeInfo.nextDate})\n간격을 지켜야 효과적으로 기억할 수 있어요.`);
+            location.href = 'https://soosooland.com/school/index.html';
+            return;
+            
+        default:
+            gameMode = 'first';
+            sentences = [...originalSentences];
+            break;
+    }
+    
+    wrongCount = 0;
+    wrongAnswers = [];
+    firstAttemptWrongAnswers = [];
+    
+    shuffleSentences();
+    document.querySelector('.game-board').style.display = 'block';
+    document.getElementById('finalMessage').style.display = 'none';
+    startRound();
+}
+
+function shuffleSentences() {
+    shuffledSentences = [...sentences];
+    for (let i = shuffledSentences.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledSentences[i], shuffledSentences[j]] = [shuffledSentences[j], shuffledSentences[i]];
+    }
+    sentenceIndex = 0;
+    totalQuestions = shuffledSentences.length;
+}
+
+function getNextSentence() {
+    if (sentenceIndex >= shuffledSentences.length) return null;
+    return shuffledSentences[sentenceIndex++];
+}
+
+function containsConsonant(targetChar, consonant) {
+    const consonantMap = { 'ㄲ': 'ㄱ', 'ㄸ': 'ㄷ', 'ㅃ': 'ㅂ', 'ㅆ': 'ㅅ', 'ㅉ': 'ㅈ' };
+    const complexConsonantMap = {
+        'ㄳ': ['ㄱ', 'ㅅ'], 'ㄵ': ['ㄴ', 'ㅈ'], 'ㄶ': ['ㄴ', 'ㅎ'],
+        'ㄺ': ['ㄹ', 'ㄱ'], 'ㄻ': ['ㄹ', 'ㅁ'], 'ㄼ': ['ㄹ', 'ㅂ'],
+        'ㄽ': ['ㄹ', 'ㅅ'], 'ㄾ': ['ㄹ', 'ㅌ'], 'ㄿ': ['ㄹ', 'ㅍ'],
+        'ㅀ': ['ㄹ', 'ㅎ'], 'ㅄ': ['ㅂ', 'ㅅ']
+    };
+    if (targetChar === consonant) return true;
+    if (consonantMap[targetChar] === consonant) return true;
+    if (complexConsonantMap[targetChar] && complexConsonantMap[targetChar].includes(consonant)) return true;
+    return false;
+}
+
+function getComplexConsonantComponents(consonant) {
+    const complexConsonantMap = {
+        'ㄳ': ['ㄱ', 'ㅅ'], 'ㄵ': ['ㄴ', 'ㅈ'], 'ㄶ': ['ㄴ', 'ㅎ'],
+        'ㄺ': ['ㄹ', 'ㄱ'], 'ㄻ': ['ㄹ', 'ㅁ'], 'ㄼ': ['ㄹ', 'ㅂ'],
+        'ㄽ': ['ㄹ', 'ㅅ'], 'ㄾ': ['ㄹ', 'ㅌ'], 'ㄿ': ['ㄹ', 'ㅍ'],
+        'ㅀ': ['ㄹ', 'ㅎ'], 'ㅄ': ['ㅂ', 'ㅅ']
+    };
+    return complexConsonantMap[consonant] || null;
+}
+
+function decomposeHangul(char) {
+    const code = char.charCodeAt(0) - 0xAC00;
+    if (code < 0 || code > 11171) return null;
+    const jong = code % 28;
+    const jung = (code - jong) / 28 % 21;
+    const cho = ((code - jong) / 28 - jung) / 21;
+    const choTable = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+    const jungTable = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'];
+    const jongTable = ['', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+    return {
+        cho: choTable[cho],
+        jung: jungTable[jung],
+        jong: jong === 0 ? '' : jongTable[jong]
+    };
+}
+
+function composeHangul(cho, jung, jong = '') {
+    const choTable = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+    const jungTable = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'];
+    const jongTable = ['', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+    
+    const choIndex = choTable.indexOf(cho);
+    const jungIndex = jungTable.indexOf(jung);
+    const jongIndex = jongTable.indexOf(jong);
+    if (choIndex === -1 || jungIndex === -1 || jongIndex === -1) return null;
+    const code = 0xAC00 + (choIndex * 21 + jungIndex) * 28 + jongIndex;
+    return String.fromCharCode(code);
+}
+
+function isJongComplete(charData) {
+    if (!charData.jong) return true;
+    const doubleConsonantMap = { 'ㄲ': 'ㄱ', 'ㅆ': 'ㅅ' };
+    if (doubleConsonantMap[charData.jong]) {
+        const baseConsonant = doubleConsonantMap[charData.jong];
+        return charData.foundJongComponents.has(baseConsonant) || charData.foundJongComponents.has(charData.jong);
+    }
+    const components = getComplexConsonantComponents(charData.jong);
+    if (!components) {
+        return charData.foundJongComponents.has(charData.jong);
+    } else {
+        return components.every(comp => charData.foundJongComponents.has(comp));
+    }
+}
+
+function isCharComplete(charData) {
+    return charData.choFound && isJongComplete(charData);
+}
+
+function createConsonantButtons() {
+    const grid = document.getElementById('consonantGrid');
+    grid.innerHTML = '';
+    consonants.forEach(consonant => {
+        const button = document.createElement('button');
+        button.className = 'consonant-btn available';
+        button.textContent = consonant;
+        button.onclick = () => handleConsonantClick(consonant);
+        button.id = `btn-${consonant}`;
+        grid.appendChild(button);
+    });
+    
+    const input = document.getElementById('consonantInput');
+    if (input) {
+        const newInput = input.cloneNode(true);
+        input.parentNode.replaceChild(newInput, input);
+        
+        newInput.addEventListener('input', function(e) {
+            const value = e.target.value;
+            if (value && consonants.includes(value)) {
+                handleConsonantClick(value);
+                setTimeout(() => { e.target.value = ''; }, 100);
+            }
+        });
+        
+        newInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (gameWon) {
+                    nextRound();
+                }
+            }
+        });
+        
+        setTimeout(() => { newInput.focus(); }, 100);
+    }
+}
+
+function getFoundJongDisplay(charData) {
+    if (!charData.jong) return '';
+    const doubleConsonantMap = { 'ㄲ': 'ㄱ', 'ㅆ': 'ㅅ' };
+    if (doubleConsonantMap[charData.jong]) {
+        const baseConsonant = doubleConsonantMap[charData.jong];
+        if (charData.foundJongComponents.has(baseConsonant) || charData.foundJongComponents.has(charData.jong)) {
+            return charData.jong;
+        }
+        return '';
+    }
+    const components = getComplexConsonantComponents(charData.jong);
+    if (!components) {
+        return charData.foundJongComponents.has(charData.jong) ? charData.jong : '';
+    } else {
+        const foundParts = components.filter(comp => charData.foundJongComponents.has(comp));
+        if (foundParts.length === 0) return '';
+        if (foundParts.length === components.length) return charData.jong;
+        else return foundParts.join('');
+    }
+}
+
+function updateDisplay() {
+    const words = [];
+    let currentWord = [];
+
+    charStates.forEach(charData => {
+        if (charData.isSpace) {
+            if (currentWord.length > 0) {
+                words.push(currentWord);
+                currentWord = [];
+            }
+        } else {
+            if (charData.isNonHangul) {
+                currentWord.push(`<span class="hangul-char complete-char">${charData.char}</span>`);
+            } else {
+                let displayCho = charData.choFound ? charData.cho : '';
+                let displayJung = charData.jung;
+                let displayJong = getFoundJongDisplay(charData);
+
+                if (displayCho && displayJong) {
+                    currentWord.push(`<span class="hangul-char complete-char">${composeHangul(displayCho, displayJung, displayJong)}</span>`);
+                } else if (displayCho && !charData.jong) {
+                    currentWord.push(`<span class="hangul-char complete-char">${composeHangul(displayCho, displayJung)}</span>`);
+                } else if (displayCho) {
+                    currentWord.push(`<span class="hangul-char incomplete-char">${composeHangul(displayCho, displayJung)}</span>`);
+                } else if (displayJong) {
+                    currentWord.push(`<span class="hangul-char incomplete-char" style="position: relative; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 1em; height: 1.2em;"><span style="font-size: 0.8em;">${displayJung}</span><span style="font-size: 0.7em; margin-top: -0.1em;">${displayJong}</span></span>`);
+                } else {
+                    currentWord.push(`<span class="hangul-char incomplete-char">${displayJung}</span>`);
+                }
+            }
+        }
+    });
+
+    if (currentWord.length > 0) words.push(currentWord);
+    const wordGroups = words.map(word => `<span class="word-group">${word.join('')}</span>`);
+    document.getElementById('sentenceArea').innerHTML = wordGroups.join('');
+}
+
+function handleConsonantClick(consonant) {
+    if (guessedConsonants.has(consonant) || wrongConsonants.has(consonant) || gameWon || gameLost) return;
+
+    let found = false;
+    charStates.forEach(charData => {
+        if (charData.isSpace || charData.isNonHangul) return;
+        
+        if (!charData.choFound && containsConsonant(charData.cho, consonant)) {
+            charData.choFound = true;
+            found = true;
+        }
+        
+        if (charData.jong && containsConsonant(charData.jong, consonant)) {
+            if (!charData.foundJongComponents.has(consonant)) {
+                charData.foundJongComponents.add(consonant);
+                found = true;
+                if (isJongComplete(charData)) charData.jongFound = true;
+            }
+        }
+    });
+
+    if (found) {
+        guessedConsonants.add(consonant);
+        document.getElementById(`btn-${consonant}`).className = 'consonant-btn correct';
+        updateDisplay();
+        const allComplete = charStates.every(charData =>
+            charData.isSpace || charData.isNonHangul || isCharComplete(charData)
+        );
+
+        if (allComplete) {
+            gameWon = true;
+            
+            // 1차 공부에서 자음을 틀린 문제 기록
+            if (gameMode === 'first' && wrongConsonants.size > 0) {
+                firstAttemptWrongAnswers.push({text: currentSentence, hint: currentHint});
+            }
+            
+            // 현재 라운드에서 틀린 문제 기록 (재시도용)
+            if (wrongConsonants.size > 0) {
+                wrongAnswers.push({text: currentSentence, hint: currentHint});
+                wrongCount++;
+            }
+            
+            document.getElementById('winMessage').style.display = 'block';
+        }
+
+    } else { 
+        wrongConsonants.add(consonant);
+        document.getElementById(`btn-${consonant}`).className = 'consonant-btn wrong';
+    }
+
+    updateStats();
+} 
+
+function updateStats() {
+    document.getElementById('gameStats').innerHTML =
+        `맞춘 자음: ${guessedConsonants.size}개 | 틀린 자음: ${wrongConsonants.size}개`;
+}
+
+function startRound() {
+    const randomSentenceData = getNextSentence();
+    
+    if (!randomSentenceData) {
+        showFinalScore();
+        return;
+    }
+    
+    currentSentence = randomSentenceData.text;
+    currentHint = randomSentenceData.hint;
+    guessedConsonants = new Set();
+    wrongConsonants = new Set();
+    gameWon = false;
+    gameLost = false;
+    charStates = [];
+    
+    document.getElementById('winMessage').style.display = 'none';
+    document.getElementById('loseMessage').style.display = 'none';
+    document.getElementById('finalMessage').style.display = 'none';
+    document.getElementById('hintText').innerHTML = wrapEmojis(currentHint);
+
+    document.getElementById('roundDisplay').textContent = `문제 ${sentenceIndex}/${totalQuestions}`;
+    document.getElementById('scoreDisplay').textContent = `오답: ${wrongCount}개`;
+   
+    for (let char of currentSentence) {
+        if (char === ' ') {
+            charStates.push({ isSpace: true });
+        } else {
+            const decomposed = decomposeHangul(char);
+            if (!decomposed) {
+                charStates.push({ isNonHangul: true, char });
+            } else {
+                charStates.push({
+                    char,
+                    cho: decomposed.cho,
+                    jung: decomposed.jung,
+                    jong: decomposed.jong,
+                    choFound: false,
+                    jongFound: false,
+                    foundJongComponents: new Set(),
+                    isSpace: false,
+                    isNonHangul: false
+                });
+            }
+        }
+    }
+
+    updateDisplay();
+    createConsonantButtons();
+    updateStats();
+}
+
+function nextRound() {
+    startRound();
+    setTimeout(() => {
+        const input = document.getElementById('consonantInput');
+        if (input) input.focus();
+    }, 200);
+}
+
+function showFinalScore() {
+    const correct = totalQuestions - wrongCount;
+    const accuracy = Math.round((correct / totalQuestions) * 100);
+    
+    document.getElementById('totalQuestions').textContent = totalQuestions;
+    document.getElementById('correctCount').textContent = correct;
+    document.getElementById('wrongCount').textContent = wrongCount;
+    document.getElementById('accuracy').textContent = accuracy;
+    
+    document.querySelector('.game-board').style.display = 'none';
+    document.getElementById('finalMessage').style.display = 'block';
+    
+    // 틀린 문제가 있으면 "다시 풀기" 버튼 표시
+    if (wrongCount > 0) {
+        document.getElementById('wrongCountForRetry').textContent = wrongCount;
+        document.getElementById('retryWrongBtn').style.display = 'inline-block';
+    } else {
+        document.getElementById('retryWrongBtn').style.display = 'none';
+        
+        // 틀린 문제 0개 = 이 단계 완료!
+        handleStageComplete();
+    }
+}
+
+// ===== 단계 완료 처리 (핵심 로직) =====
+function handleStageComplete() {
+    const wpName = getWordpoolName();
+    const today = getTodayLocal();
+    
+    if (gameMode === 'practice') {
+        // 연습 모드 - 아무것도 저장 안 함
+        const finalAlert = document.getElementById('finalAlert');
+        const practiceMsg = document.createElement('div');
+        practiceMsg.style.marginTop = '15px';
+        practiceMsg.style.fontSize = '1.1em';
+        practiceMsg.style.color = '#FF9800';
+        practiceMsg.innerHTML = '🏆 연습 모드 - 기록되지 않았습니다';
+        finalAlert.appendChild(practiceMsg);
+        return;
+    }
+    
+    if (gameMode === 'first' || gameMode === 'first-retry') {
+        // === 1차 공부 완료 ===
+        
+        if (firstAttemptWrongAnswers.length === 0) {
+            // 🏆 1차 공부에서 한 문제도 안 틀림 → 트로피!
+            const progress = getProgress(wpName);
+            progress.attempts = [
+                { date: today, accuracy: 100 },
+                { date: today, accuracy: 100 },
+                { date: today, accuracy: 100 },
+                { date: today, accuracy: 100 },
+                { date: today, accuracy: 100 }
+            ];
+            saveProgressData(wpName, progress);
+            
+            const finalAlert = document.getElementById('finalAlert');
+            const trophyMsg = document.createElement('div');
+            trophyMsg.style.marginTop = '15px';
+            trophyMsg.style.fontSize = '1.3em';
+            trophyMsg.innerHTML = '🏆 만점입니다! 트로피를 드립니다!';
+            finalAlert.appendChild(trophyMsg);
+            
+            console.log('🏆 1차 만점! 트로피 획득!');
+        } else {
+            // 1차 공부에서 틀린 문제가 있었음 → 1차 완료 + 복습 일정 저장
+            const progress = getProgress(wpName);
+            progress.attempts.push({ date: today, accuracy: Math.round(((totalQuestions - firstAttemptWrongAnswers.length) / totalQuestions) * 100) });
+            saveProgressData(wpName, progress);
+            
+            // 복습 데이터 저장: 1차에서 틀린 문제 + 다음 복습 날짜
+            const reviewData = {
+                wrongQuestions: firstAttemptWrongAnswers.map(q => ({ text: q.text, hint: q.hint })),
+                firstStudyDate: today,
+                completedReviews: 0,
+                nextReviewDate: addDays(today, getIntervals()[0]),  // 3일(또는 1분) 후 2차 복습
+                reviewHistory: [
+                    { step: 1, date: today }  // 1차 완료 기록
+                ]
+            };
+            saveReviewData(wpName, reviewData);
+            
+            const finalAlert = document.getElementById('finalAlert');
+            const reviewMsg = document.createElement('div');
+            reviewMsg.style.marginTop = '15px';
+            reviewMsg.style.fontSize = '1.1em';
+            reviewMsg.style.color = '#2196F3';
+            reviewMsg.innerHTML = `📝 1차 공부 완료!<br>틀린 ${firstAttemptWrongAnswers.length}문제는 ${TEST_MODE ? getIntervals()[0]+'초' : '3일'} 후에 복습합니다.`;
+            finalAlert.appendChild(reviewMsg);
+            
+            console.log('1차 완료! 틀린 문제:', firstAttemptWrongAnswers.length, '다음 복습:', addDays(today, 3));
+        }
+    }
+    else if (gameMode === 'review' || gameMode === 'review-retry') {
+        // === 복습 완료 ===
+        const wpName = getWordpoolName();
+        const progress = getProgress(wpName);
+        const reviewData = getReviewData(wpName);
+        
+        if (!reviewData) return;
+        
+        // 복습 완료 횟수 증가
+        reviewData.completedReviews = (reviewData.completedReviews || 0) + 1;
+        
+        // 복습 히스토리 기록
+        if (!reviewData.reviewHistory) reviewData.reviewHistory = [];
+        reviewData.reviewHistory.push({ step: reviewData.completedReviews + 1, date: today });
+        
+        // progress에 attempt 추가 (날짜는 오늘, 1차 날짜 보존)
+        progress.attempts.push({ date: today, accuracy: 100 });
+        
+        // 다음 복습 간격 계산 (이번 복습 완료일 기준!)
+        const intervals = getIntervals();
+        // completedReviews: 1=2차완료, 2=3차완료, 3=4차완료, 4=5차완료
+        
+        const stepNames = ['2차', '3차', '4차', '5차'];
+        const currentStepName = stepNames[reviewData.completedReviews - 1] || '';
+        
+        if (reviewData.completedReviews >= 4) {
+            // 5차 복습 완료 → 🏆 트로피!
+            while (progress.attempts.length < 5) {
+                progress.attempts.push({ date: today, accuracy: 100 });
+            }
+            saveProgressData(wpName, progress);
+            
+            reviewData.nextReviewDate = null;
+            saveReviewData(wpName, reviewData);
+            
+            const finalAlert = document.getElementById('finalAlert');
+            const trophyMsg = document.createElement('div');
+            trophyMsg.style.marginTop = '15px';
+            trophyMsg.style.fontSize = '1.3em';
+            trophyMsg.innerHTML = '🏆 5차 복습 완료! 참 잘 했어요!';
+            finalAlert.appendChild(trophyMsg);
+            
+            console.log('🏆 5차 복습 완료! 트로피!');
+        } else {
+            // 다음 복습 날짜 설정 (오늘 기준!)
+            const nextInterval = intervals[reviewData.completedReviews]; // completedReviews=1이면 intervals[1]=7
+            reviewData.nextReviewDate = addDays(today, nextInterval);
+            
+            saveProgressData(wpName, progress);
+            saveReviewData(wpName, reviewData);
+            
+            const nextStepNames = ['3차', '4차', '5차'];
+            const nextStepName = nextStepNames[reviewData.completedReviews - 1] || '다음';
+            
+            const finalAlert = document.getElementById('finalAlert');
+            const reviewMsg = document.createElement('div');
+            reviewMsg.style.marginTop = '15px';
+            reviewMsg.style.fontSize = '1.1em';
+            reviewMsg.style.color = '#2196F3';
+            reviewMsg.innerHTML = `✅ ${currentStepName} 복습 완료!<br>${nextStepName} 복습: ${nextInterval}일 후 (${reviewData.nextReviewDate})`;
+            finalAlert.appendChild(reviewMsg);
+            
+            console.log(`${currentStepName} 복습 완료! 다음:`, reviewData.nextReviewDate);
+        }
+    }
+}
+
+// 틀린 문제 다시 풀기 (현재 라운드에서 틀린 것)
+function retryWrongAnswers() {
+    sentences = [...wrongAnswers];
+    wrongAnswers = [];
+    wrongCount = 0;
+    
+    // 모드 유지 (1차면 first-retry, 복습이면 review-retry)
+    if (gameMode === 'first') {
+        gameMode = 'first-retry';
+        // firstAttemptWrongAnswers는 유지! (1차에서 틀린 원본 기록)
+    } else if (gameMode === 'review') {
+        gameMode = 'review-retry';
+    }
+    // first-retry, review-retry는 그대로 유지
+    
+    shuffleSentences();
+    document.querySelector('.game-board').style.display = 'block';
+    document.getElementById('finalMessage').style.display = 'none';
+    startRound();
+}
+
+function wrapEmojis(text) {
+    if (!text) return '';
+    return text.replace(/([\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F000}-\u{1F02F}\u{1F0A0}-\u{1F0FF}\u{1F100}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}])/gu, '<span class="emoji">$1</span>');
+}
+
+window.onload = async function () {
+    const success = await loadWordpool();
+    if (success) {
+        document.getElementById('categoryTitle').textContent = categoryTitle;
+        createConsonantButtons();
+        initGameMode();
+    }
+};
+
+</script>
+
+</body>
+</html>
