@@ -1043,7 +1043,7 @@ function getDaysDiff(date1, date2) {
 
 function getProgress(wordpoolId) {
   try {
-    const allProgress = JSON.parse(localStorage.getItem('moeumschool_progress') || '{}');
+    const allProgress = JSON.parse(localStorage.getItem('moeumdict_progress') || '{}');
     return allProgress[wordpoolId] || { attempts: [] };
   } catch (error) {
     return { attempts: [] };
@@ -1052,7 +1052,7 @@ function getProgress(wordpoolId) {
 
 function getReviewData(wordpoolId) {
   try {
-    const allReviews = JSON.parse(localStorage.getItem('moeumschool_reviews') || '{}');
+    const allReviews = JSON.parse(localStorage.getItem('moeumdict_reviews') || '{}');
     return allReviews[wordpoolId] || null;
   } catch (error) {
     return null;
@@ -1090,8 +1090,8 @@ function playGame(wordpool, title) {
     }
   }
   
-  const gameUrl = 'https://soosooland.com/school/school.html';
-  const wordpoolUrl = `https://soosooland.com/school/wordpools/${wordpool}.json`;
+  const gameUrl = 'https://soosooland.com/dict/dict.html';
+  const wordpoolUrl = `https://soosooland.com/dict/wordpools/${wordpool}.json`;
   const titleParam = title ? `&title=${encodeURIComponent(title)}` : '';
   location.href = `${gameUrl}?wordpool=${encodeURIComponent(wordpoolUrl)}${titleParam}`;
 }
