@@ -1154,7 +1154,7 @@ function startRound() {
         return;
     }
     
-    currentSentence = randomSentenceData.text;
+    currentSentence = randomSentenceData.text.replace(/[\u200B-\u200D\uFEFF\u00A0]/g, '').trim();
     currentHint = randomSentenceData.hint;
     guessedConsonants = new Set();
     wrongConsonants = new Set();
