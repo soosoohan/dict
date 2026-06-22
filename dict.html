@@ -677,9 +677,18 @@ async function loadWordpool() {
             redirectToIndex();
             return false;
         }
+        const cleaned = data.map(item => {
+    const result = {};
+    for (const key in item) {
+        result[key] = typeof item[key] === 'string' 
+            ? item[key].replace(/[\u200B-\u200D\uFEFF\u00A0]/g, '').trim()
+            : item[key];
+    }
+    return result;
+});
 
-        sentences = data;
-        originalSentences = [...data];
+sentences = cleaned;
+originalSentences = [...cleaned];
 
         return true;
 
