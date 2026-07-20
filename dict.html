@@ -1019,12 +1019,14 @@ function createConsonantButtons() {
         input.parentNode.replaceChild(newInput, input);
         
         newInput.addEventListener('input', function(e) {
-            const value = e.target.value;
-            if (value && consonants.includes(value)) {
-                handleConsonantClick(value);
-                setTimeout(() => { e.target.value = ''; }, 100);
-            }
-        });
+    const value = e.target.value;
+    if (value && consonants.includes(value)) {
+        handleConsonantClick(value);
+        setTimeout(() => { e.target.value = ''; }, 100);
+    } else if (value) {
+        e.target.value = '';  // 자음이 아니거나 공백이면 즉시 비우기
+    }
+    });
         
         newInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
