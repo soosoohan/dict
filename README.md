@@ -54,8 +54,6 @@ This is a Korean language puzzle game where players guess the hidden consonants 
 - 문제마다 10점 만점에서 시작해서, 틀린 자음을 클릭할 때마다 1점씩 삭감됩니다.  
 - 10라운드가 끝나면 각 팀의 점수를 합산해 총점이 높은 팀(실수가 적은 팀)이 승리합니다.  
 
-## Doori Moeum
-
 - A two-player Moeum quiz battle where each team solves its own separate set of questions.  
 - Each round, only one team solves while the other waits. To keep the waiting team from getting bored, they get to preview the question their team will solve in the next round.  
 - The solving turn alternates by round (Round 1: Team 1 solves / Round 2: Team 2 solves / and so on).  
@@ -87,8 +85,6 @@ This is a Korean language puzzle game where players guess the hidden consonants 
 - 첫 학습에서 틀린 문제는 그 자리에서 바로 다시 풀어 정답을 확인합니다. (당일 학습 완료)  
 - 이렇게 한 번이라도 틀렸던 문제만 복습 일정에 등록되어, 위 4단계 복습을 거칩니다.  
 - 날짜를 지켜서 반복하면 오래 기억됩니다.  
-
-## Moeum Dictionary (Moeum Dict) / Moeum School  
 
 - Both Moeum Dictionary and Moeum School are study quizzes built from vocabulary extracted from Korean elementary school textbooks.  
 - In Moeum Dictionary, you see a word and guess its meaning. In Moeum School, you see a hint and guess the word.  
