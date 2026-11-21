@@ -552,7 +552,7 @@ height: auto;
 
 </div>
 </div>
-  <div class="consonant-section">
+<div class="consonant-section" id="consonantSection">
  <h3 class="consonant-title">
     <span class="title-text-desktop">자음을 클릭하거나 입력하세요 →</span>
     <span class="title-text-mobile">자음을 클릭하세요</span>
@@ -1204,6 +1204,18 @@ function nextRound() {
         if (input) input.focus();
     }, 200);
 }
+function hideConsonants() {
+  const sec = document.querySelector('.consonant-section');
+  const stats = document.getElementById('gameStats');
+  if (sec) sec.style.display = 'none';
+  if (stats) stats.style.display = 'none';
+}
+function showConsonants() {
+  const sec = document.querySelector('.consonant-section');
+  const stats = document.getElementById('gameStats');
+  if (sec) sec.style.display = '';
+  if (stats) stats.style.display = '';
+}
 
 function showFinalScore() {
     const correct = totalQuestions - wrongCount;
@@ -1226,9 +1238,15 @@ function showFinalScore() {
         
         // 틀린 문제 0개 = 이 단계 완료!
         handleStageComplete();
+        hideConsonants();   
     }
 }
 
+
+
+
+
+    
 // ===== 단계 완료 처리 (핵심 로직) =====
 function handleStageComplete() {
     const wpName = getWordpoolName();
